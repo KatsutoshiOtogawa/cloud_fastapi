@@ -1,0 +1,7 @@
+.devcontainer
+.github
+.editorconfig
+.gitignore
+docker_local_run.sh
+README.md
+Pipfile.lock

@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+gunicorn = "*"
+uvicorn = "*"
+asgiref = "*"
+fastapi = "*"
+pydantic = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
+
+[scripts]
+test = "python3 manage.py test"
+http = "uvicorn main:app --reload"
+https = "uvicorn main:app --reload --ssl-keyfile=keys/127.0.0.1-key.pem --ssl-certfile=keys/127.0.0.1.pem"
+asgi_http = "gunicorn main:app -k uvicorn.workers.UvicornWorker --config ./gunicorn-cfg.py"
+asgi_https = "gunicorn main:app -k uvicorn.workers.UvicornWorker --config ./gunicorn-cfg.py --keyfile=keys/127.0.0.1-key.pem --certfile=keys/127.0.0.1.pem"
+kill_asgi = "pkill gunicorn"
+key_init = "mkcert --install"
+key_local = "bash -c 'cd keys && mkcert 127.0.0.1'"
