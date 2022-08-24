@@ -24,3 +24,4 @@ asgi_https = "gunicorn main:app -k uvicorn.workers.UvicornWorker --config ./guni
 kill_asgi = "pkill gunicorn"
 key_init = "mkcert --install"
 key_local = "bash -c 'cd keys && mkcert 127.0.0.1'"
+create_secret_key = "python3 create_secret_key.py"

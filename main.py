@@ -1,8 +1,8 @@
 """This is a test program."""
 import os
-from fastapi import FastAPI # pylint: disable=import-error
+from fastapi import FastAPI
 
-from routers import users
+from routers import router
 
 openAPIDisable = { "docs_url": None, "redoc_url": None, "openapi_url": None }
 
@@ -13,4 +13,4 @@ if os.getenv("K_SERVICE") is None:
 else:
     app = FastAPI(**openAPIDisable)
 
-app.include_router(users.router)
+app.include_router(router)

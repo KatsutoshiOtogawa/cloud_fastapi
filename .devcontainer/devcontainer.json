@@ -13,7 +13,7 @@
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
 			"settings": { 
-				"python.defaultInterpreterPath": "/usr/local/bin/python",
+				"python.defaultInterpreterPath": "/home/vscode/.local/share/virtualenvs/workspace-dqq3IVyd/lib/python3.10/site-packages",
 				"python.linting.enabled": true,
 				"python.linting.pylintEnabled": true,
 				"python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
@@ -25,9 +25,10 @@
 				"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
 				"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
 				"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
-				"python.testing.pytestPath": "/usr/local/py-utils/bin/pytest",
-				// 「workspace-dqq3IVyd」　ランダムな値に見えるが固定な値なのでみんなこれで良い。
-				"python.analysis.extraPaths": ["/usr/local/py-utils/venvs/pipenv/lib/python3.10/site-packages/", "/home/vscode/.local/share/virtualenvs/workspace-dqq3IVyd/lib/python3.10/site-packages"]
+                "python.linting.pylintArgs": [
+					"--disable=E0401"
+				],
+				"python.testing.pytestPath": "/usr/local/py-utils/bin/pytest"
 			},
 			
 			// Add the IDs of extensions you want installed when the container is created.
